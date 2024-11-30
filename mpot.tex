@@ -1,0 +1,940 @@
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% setup page to suit conference specification using fancyhdr
+\usepackage{fancyhdr}
+\setlength{\paperwidth}{215.9mm}
+\setlength{\hoffset}{-9.7mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{184.3mm}
+%\setlength{\columnsep}{98mm}
+\setlength{\columnsep}{6.3mm}
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0mm}
+
+\setlength{\paperheight}{279.4mm}
+\setlength{\voffset}{-7.4mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\textheight}{235.2mm}
+\setlength{\footskip}{12.4mm}
+
+\setlength{\parindent}{1pc}
+
+
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+\usepackage{epsfig}
+%\usepackage{calc}
+
+\usepackage{amsmath}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{arydshln,leftidx,mathtools}
+\usepackage{float}
+
+\def\SPSB#1#2{\rlap{\textsuperscript{\textcolor{black}{#1}}}\SB{#2}}
+\def\SP#1{\textsuperscript{\textcolor{black}{#1}}}
+\def\SB#1{\textsubscript{\textcolor{black}{#1}}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Bio-Inspired Robotics End-Effector for Dexterous Grasping using Tenden-Driven Mechanism}  
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+% \author{\IEEEauthorblockN{\\  Than D. Le, Toan T. Truong,  An T. Vu, Tran P. T. Anh, Phuoc T. Phan, Huy T. Tran,  and Thong H. Nguyen}
+% \IEEEauthorblockA{ Faculty of Engineering, \\
+% Vietnamese-German University,\\
+% Binh Duong, Vietnam\\
+% Email: than.ld@vgu.edu.vn}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+% insert page header and footer here for IEEE PDF Compliant
+\thispagestyle{fancy}
+\fancyhead{}
+\lhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{abstract}
+%\boldmath
+The initial study in tendon-driven system and how to control it using  step motors. This paper covers some former studies about tendon-driven system, and an approach to humanoid robot design with one single finger that adopt the following system. Study about step-motors and how to convert the motor torque into change in angle of the links would also be covered.
+%Dear Mr.Than, I want to restrict the scope of this finger to the study of only one finger. As in the time I and T.Anh have discussed mainly about the design of a finger.
+%		the Finger proposed instead of using two ways of line for each links (for the motion of the finger up and down) that would result in 2 motors for 1 joints
+%		but we find out that the two joints furthest from the palm doesn't need such motors for manipulating. Thus, we can minimize the use of redundant actuators by using springs :
+%		the motion for one joint now would be the collaboration of the step motor and the stiffness of the spring .
+%		we also take the advantages that whenever step-motor is operated ,it has the ability to stay still and has its own restoring force, means that we can stop the motor at any angle we prefer.
+
+%Simple procedure in designing and studying forward and inverse kinematics of a 5-DOF humanoid robotic arm. Firstly, the idea of imitating human's joint behavior using servo-pairs is introduced. Then, using Denavit-Hartenberg parameters, the forward kinematics of the arm is calculated. After that, one solution for the inverse kinematics problem is proposed, in an iterative way such that further models can be solved also.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+This paper is belong to the Bio-Inspired Robotics project of the Robotic Lab in VGU (Vietnamese German University).\\
+	In the research of this paper, study about finger joints including its basic properties and an approach to design one seperated finger is covered.\\
+    
+First, some theories will be covered as the figure of the finger will be defined. These includes the defining of the reference frames attached to the finger joint and the transformation matrixes each perform as a rotary motion of links.
+\\
+Next is the proposed design for the finger, which include some of the hardware used and the way to applied them into the actuation of finger joint. 
+\\
+One more thing to noticed is that none of the proposed designs has been manufactured, so debug has not been applied in the time of this paper.
+\\
+
+Finally, the conclusion and suggestions for upcoming research are covered
+\label{sec:introduction}
+
+\noindent 
+
+\section{Theory and calculation}
+
+\noindent The purpose of this paper is to propose an approach into the design of a single finger of the humanoid robotic hand. Following the biological reference, a finger is considered an open 3 joint-chain in this paper. The joints are biologically known as distal interphalangeal($DIP$) joint $(1 Dof)$, proximal interphalangeal($PIP$) joint $( 1 Dof )$ and metacarpophalangeal$(MCP)$ joint $(2 Dof)$ respectively from the tip of nail to the palm. 
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.6\linewidth]{image/hand_bones.png}
+      \caption{Hand Links and Joints}
+      \label{fig:abstract_model_3}
+   \end{figure}
+
+The setup of the frames of reference is based on the Denavit-Hattenberg $(DH)$ convention (adopted from section 2.8.2 of the book Robotics Modeling Planning and Control) on simplification of link calculation. The motion joint is described by a cylinder as the bone rotates about it. The central axis of the cylinder is chosen too be $Oz$, as to represent the rotary axis of the joint. $Ox_i$ is then chosen to be coincided to the direction of link$_i$ as a way to describe the bone's transition. The last axis $Oy$ is chosen so that $Oxyz$ is right-handed.
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.6\linewidth]{image/joint_links.png}
+      \caption{finger reference frame with DH convention adopted}
+      \label{fig:abstract_model_3}
+   \end{figure}
+
+The figure above present a model of an open-chain kinematic system with 3 joints and 4 $Dofs$. The MCP joint perform a partial spherical trajectory, which requires 2 $Dofs$ itself
+
+%   \begin{figure}[thpb]
+%      \centering
+%      \includegraphics[width=0.5\linewidth]{image/arm_0_assem_2_showServos.png}
+%      \caption{Arm design with servo positions}
+%      \label{fig:arm_with_servo}
+%   \end{figure}
+   
+
+
+%Kinematics is the science of motion that study motion regardless of the forces that move it. In this paper, we care only about the position and orientation of the linkages in static situations.
+
+%In order to deal with the geometry of such a complex manipulator as a humanoid arm, we need to assign frames to its parts. After that, we describe the relationship between them in term of equations.
+
+\subsection{Denavit-Hartenberg parameters}
+We calculate frames transformations thanks to translating and rotating operators. We will use DH parameters in finding the kinematics solutions of our arm.
+
+There are some constraints in the initial orientations of the coordinate systems:
+  \begin{itemize}
+  	\item The $Oz$ axis is the joint's axis. The step motor is going to rotate about this axis in real life.
+  	\item The $Ox_i$ axis is parallel to the common normal of the $Oz_i$ and $Oz_{i-1}$: $x\SB{n}=z\SB{n} \times z\SB{n-1}$.
+  	\item The $)y$ axis completes a right-hand reference frame based on $Ox$ and $Oz$
+  \end{itemize}
+
+Next, let's talk about the matrix calculations of the method. As mentioned, each link can be think as a coordinate transformation from the previous coordinate system to the next coordinate system. That transformation is then described as a product of translations along and rotations about x and z axes:
+  \begin{center}
+  	\begin{equation}
+  		\SP{n-1}T\SB{n} = Trans\SB{z\SB{n-1}}(d\SB{n}) \cdot Rot\SB{z\SB{n-1}}(\theta\SB{n}) \cdot Trans\SB{x\SB{n}}(r\SB{n}) \cdot Rot\SB{z\SB{n}}(\alpha\SB{n})
+  	\end{equation}
+  \end{center}
+  
+  where:
+  \begin{itemize}
+  	\item $Trans\SB{z\SB{n-1}}(d\SB{n})$: Translation along z axis by a distance d\SB{n} ("link offset")
+  	\item $Rot\SB{z\SB{n-1}}(\theta\SB{n})$: Rotation about z axis by an angle $\theta\SB{n}$
+  	\item $Trans\SB{x\SB{n}}(r\SB{n})$: Translation along x axis by a distance r\SB{n} ("link offset")
+  	\item $Rot\SB{x\SB{n}}(\alpha\SB{n})$: Rotation about x axis by an angle $\alpha\SB{n}$
+  \end{itemize}
+  
+  We can find the matrix expressions of the transformation:
+  
+  \begin{center}
+  	\begin{equation} \label{eqt:dh_matrix}
+  	\SP{n-1}T\SB{n} =
+  	\begin{bmatrix}
+  	\cos{\theta\SB{n}} & -\sin{\theta\SB{n}}\cos{\alpha\SB{n}} & \sin{\theta\SB{n}}\sin{\alpha\SB{n}} & r\SB{n}\cos{\theta\SB{n}}\\
+  	\sin{\theta\SB{n}} & \cos{\theta\SB{n}}\cos{\alpha\SB{n}} & -\cos{\theta\SB{n}}\sin{\alpha\SB{n}} & r\SB{n}\sin{\theta\SB{n}}\\
+  	0 & \sin{\alpha\SB{n}} & \cos{\alpha\SB{n}} & d\SB{n}\\
+  	0 & 0 & 0 & 1
+  	\end{bmatrix}
+  	\end{equation}
+  \end{center}
+
+\subsection{Forward kinematics}
+  The purpose of this part is to find the absolute position and orientation of each frame (which is attached to each joint/servo) in reference to the "global coordinate system", which is the very first frame attached to the shoulder.
+  
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=0.8\linewidth]{image/abstract_model_1.png}
+  	\caption{Full arm with the attributes attached to frames}
+  	\label{fig:arm_attributes}
+  \end{figure}
+  
+  Now that we have the transformation matrix for each link, we can apply that to our whole arm. But first, it would be a good idea to make a table of DH parameters for each frame:
+  \begin{table}[H]
+  	\centering
+  	\def\arraystretch{1.5}
+  	\setlength\tabcolsep{8pt}
+  	\begin{tabular}{||c : c: c: c: c||} 
+  		\hline
+  		\textit{i} 	& d\SB{n} & $\theta\SB{n}$ &  r\SB{n} & $\alpha\SB{n}$ \\[0.5ex]
+  		\hline
+  		0 & h		& $q_0+\pi$ 			& 0 	& $\frac{\pi}{2}$	\\ 
+  		1 & 0 		& $q_1+\frac{\pi}{2}$ 	& $l_1$ 	& $\frac{\pi}{2}$	\\ 
+  		2 & h 		& $q_2$ 				& 0 	& $-\frac{\pi}{2}$	\\
+  		3 & 0 		& $q_3+\frac{\pi}{2}$ 	& $l_2$	& $\frac{\pi}{2}$	\\
+  		4 & $l_3$ 	& $q_4$ 				& 0 	& 0					\\[1ex] 
+  		\hline
+  	\end{tabular}
+  	\caption{DH parameters of each link}
+  	\label{tab:dh_parameters}
+  \end{table}
+  where q\SB{n} is the angle of the servo at that joint.
+  
+  Next part is to find the transformation from one frame to the next. Apply Table \ref{tab:dh_parameters} attributes to equation (\ref{eqt:dh_matrix}), we get transformation for each link:
+  \begin{center}
+  	\begin{equation} \label{eqt:transform_first}
+  	\SP{0}T\SB{1}(q\SB{0}) =
+  	\begin{bmatrix}
+  	\cos{q\SB{0}} 	& 0 	& \sin{q\SB{0}} 	& 0\\
+  	\sin{q\SB{0}} 	& 0 	& -\cos{q\SB{0}} 	& 0\\
+  	0 				& 1 	& 0 				& h\\
+  	0 				& 0 	& 0 				& 1
+  	\end{bmatrix}
+  	\end{equation}
+  	
+  	\begin{equation}
+  	\SP{1}T\SB{2}(q\SB{1}) =
+  	\begin{bmatrix}
+  	\cos{q\SB{1}} 	& 0 	& \sin{q\SB{1}} 	& l_1\cos{q\SB{1}}\\
+  	\sin{q\SB{1}} 	& 0 	& -\cos{q\SB{1}} 	& l_1\sin{q\SB{1}}\\
+  	0 				& 1 	& 0 				& 0\\
+  	0 				& 0 	& 0 				& 1
+  	\end{bmatrix}
+  	\end{equation}
+  	
+  	\begin{equation}
+  	\SP{2}T\SB{3}(q\SB{2}) =
+  	\begin{bmatrix}
+  	\cos{q\SB{2}} 	& 0 	& -\sin{q\SB{2}} 	& 0\\
+  	\sin{q\SB{2}} 	& 0 	& \cos{q\SB{2}} 	& 0\\
+  	0 				& -1 	& 0 				& h\\
+  	0 				& 0 	& 0 				& 1
+  	\end{bmatrix}
+  	\end{equation}
+  	
+  	\begin{equation}
+  	\SP{3}T\SB{4}(q\SB{3}) =
+  	\begin{bmatrix}
+  	\cos{q\SB{3}} 	& 0 	& \sin{q\SB{3}} 	& l_2\cos{q\SB{3}}\\
+  	\sin{q\SB{3}} 	& 0 	& -\cos{q\SB{3}} 	& l_2\sin{q\SB{3}}\\
+  	0 				& 1 	& 0 				& h\\
+  	0 				& 0 	& 0 				& 1
+  	\end{bmatrix}
+  	\end{equation}
+  	
+  	\begin{equation}
+  	\SP{4}T\SB{5}(q\SB{4}) =
+  	\begin{bmatrix}
+  	\cos{q\SB{4}} 	& -\sin{q\SB{4}} 	& 0 	& 0\\
+  	\sin{q\SB{4}} 	& \cos{q\SB{4}} 	& 0 	& 0\\
+  	0 				& 1 				& 1 	& l_2\\
+  	0 				& 0 				& 0 	& 1
+  	\end{bmatrix}
+  	\end{equation}
+  \end{center}  \quad \\ 
+  By measuring the real arm, we have h = 7cm, l\SB{1} = 12cm, l\SB{2} = 12cm. The length of l\SB{3} is assumed to be zero now, as there are no hand or end-effector attached to the arm yet.
+  
+  Now that we have each transformation, we can calculate the position and orientation of each frame in reference to the "global coordinate system". The first frame is already calculated in equation \ref{eqt:transform_first}, we start with frame number two:
+  
+  \begin{center}
+  	\begin{equation} \label{eqt:frame_2_short}
+  	\SP{0}T\SB{2} = \SP{0}T\SB{1} \SP{1}T\SB{2}
+  	\end{equation}
+  \end{center}
+  
+  \noindent Therefore, the position of the second frame is:
+  \begin{center}
+  	\begin{equation} \label{eqt:position_2}
+  	\begin{bmatrix}
+  	^0x_2\\
+  	^0y_2\\
+  	^0z_2
+  	\end{bmatrix} =
+  	\begin{bmatrix}
+  	l\SB{1}\cos{q\SB{0}}\cos{q\SB{1}}\\
+  	l\SB{1}\sin{q\SB{0}}\cos{q\SB{1}}\\
+  	h + l\SB{1}\sin{q\SB{1}}
+  	\end{bmatrix}
+  	\end{equation}
+  \end{center}
+  The transformation to third frame is:
+  \begin{center}	
+  	\begin{equation} \label{eqt:frame_3_short}
+  	\SP{0}T\SB{3} = \SP{0}T\SB{1} \SP{1}T\SB{2} \SP{2}T\SB{3}
+  	\end{equation}
+  \end{center}
+  Leads to
+  \begin{center}
+  	\begin{equation} \label{eqt:position_3}
+  	\begin{bmatrix}
+  	^0x_3\\
+  	^0y_3\\
+  	^0z_3
+  	\end{bmatrix} =
+  	\begin{bmatrix}
+  	h\cos{q\SB{0}}\sin{q\SB{1}} + l\SB{1}\cos{q\SB{0}}\cos{q\SB{1}}\\
+  	h\sin{q\SB{0}}\sin{q\SB{1}} + l\SB{1}\sin{q\SB{0}}\cos{q\SB{1}}\\
+  	h(1-\cos{q\SB{1}}) + l\SB{1}\sin{q\SB{1}}
+  	\end{bmatrix}
+  	\end{equation}
+  \end{center}  \quad \\ 
+  Because we agreed that there will be no hand, l\SB{3} is equal to zero. That way, frame 4 and frame 5 has the same origin, and same orientation as well. Therefore, in the next calculation, we just need to calculate \SP{0}T\SB{4} and treat it as the transformation to the end-effector.
+ The position of the end-effector:\\ \quad \\ 
+ $
+  	^0x_4 =	h \cdot cq\SB{0}sq\SB{1} + l\SB{1}cq\SB{0}cq\SB{1} + l\SB{2}cq\SB{3}(cq\SB{0}cq\SB{1}cq\SB{2} + sq\SB{0}sq\SB{2}) -
+  	l\SB{2}cq\SB{0}sq\SB{1}sq\SB{3}
+    \\ \quad \\ 
+  	^0y_4 = \cdot sq\SB{0}sq\SB{1} + l\SB{1}sq\SB{0}cq\SB{1} + l\SB{2}cq\SB{3} (sq\SB{0}cq\SB{1}cq\SB{2} - cq\SB{0}sq\SB{2}) -
+  	l\SB{2}sq\SB{0}sq\SB{1}sq\SB{3}
+    \\ \quad \\ 
+  	^0z_4h = h(1-cq\SB{1}) + l\SB{1}sq\SB{1} + l\SB{2} (sq\SB{1}cq\SB{2}cq\SB{3} + cq\SB{1}sq\SB{3})
+  $ \\ \quad \\ 
+  Now that all positions and orientations of the arm has been computed, we can keep track of every component at any time, given the angles q\SB{n} of the servos.
+  
+  \newpage
+  \section{Inverse kinematics}
+  \subsection{Resolvability of the problem}
+  Because of the structure that mimic the sphere joint for each pair of servos, the nature in moving of our frame has quite similar properties. Distance from frame number 3 (forth joint) to frame number 1 (second joint) remains the same. This leads to the conclusion that when servo 0 and servo 1 rotate, frame 3 will move on a sphere S\SB{1} with radius l\SB{1}+h.
+  \begin{figure}[H]
+   	\centering
+   	\includegraphics[width=0.6\linewidth]{image/workspace.png}
+   	\caption{Workspace of frame 1 and 3}
+   	\label{fig:workspace}
+  \end{figure}
+  
+  The same thing applies to the end-effector and frame 3 (the elbow). The end-effector moves on a sphere S\SB{2} with radius l\SB{2}+l\SB{3} (Figure \ref{fig:workspace}). Therefore, we need the end-effector position to be inside the possible space of sphere S\SB{2}. In another word:
+  \begin{center}
+  \vspace{-0.5cm}
+  	\begin{equation} \label{eqt:limit_to_A1}
+  	l_1 + h - (l_2 + l_3) < d_1e < l_1 + h + (l_2 + l_3)
+  	\end{equation}
+  \end{center}
+  \begin{itemize}
+  	\item If $l_1 + h - (l_2 + l_3) < 0$, the end-effector can touch the origin of frame 1. Then, there is no lower bound for the distance.
+  	\item If $d_1e < l_1 + h + (l_2 + l_3)$, the arm can not reach to the destination, therefore there is zero solution. The problem is unsolvable.
+  \end{itemize}
+  From equation \ref{eqt:transform_first}, we can see that frame 1 is always at point
+  $\begin{bmatrix}
+  0\\
+  0\\
+  h
+  \end{bmatrix}$.
+  That fact, together with equation \ref{eqt:limit_to_A1}, lead to our theoretical workspace of the arm:
+  \begin{center}
+  	\begin{equation} \label{eqt:theoretical_workspace}
+  	l_1 + h - (l_2 + l_3) < \sqrt{(x_{0e})^2+(y_{0e})^2+(z_{0e} - h)^2} < l_1 + h + (l_2 + l_3)
+  	\end{equation}
+  \end{center}
+  where $x_{0e},\ y_{0e},\ z_{0e}$ are component distances from the first origin (frame zero) to the end-effector.\\
+  We can think about this workspace as a solid and filled sphere of radius $l_1 + h + (l_2 + l_3)$. This sphere has a hollow in the shape of a sphere. The hollow has radius of $l_1 + h - (l_2 + l_3)$ if it is larger than zero, or zero otherwise. The remaining solid part is our workspace in 3D.
+  
+  \subsection{Solution for inverse kinematics}
+  Now that we need to solve the problem, let's take it from another perspective. As the end-effector cannot be moved (its position is fixed), we cannot think about it as moving on a sphere around frame 3. Instead, frame 3's origin (we call it O\SB{3} from now on) must be considered as moving on a sphere around the end-effector. This sphere is called S\SB{3}\\
+  On another hand, the elbow itself must move on a sphere (S\SB{1}) around the should, which is frame 1. Both spheres are represented on Figure \ref{fig:sphere_collision}.\\
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=0.6\linewidth]{image/sphere_collision.png}
+  	\caption{Two spheres by shoulder and end-effector with their collision}
+  	\label{fig:sphere_collision}
+  \end{figure}
+  Therefore, the possible solutions are points which lie on the circle formed by both spheres. What we have to find is one of those points, and from that point compute the angles of the joints.
+  
+  For more efficient working, let's split our solution into smaller tasks:
+  \begin{enumerate}
+  	\item Find equations of both spheres
+  	\item Find the plane that holds the circle
+  	\item Find the center and radius of the circle
+  	\item Find the parametric equation of that circle which depends only on one variable
+  	\item Choose one point on the circle and solve the angles of joint 0 and 1
+  	\item Solve for the rest of the arm
+  \end{enumerate}
+  As we are working mostly with vectors in describing the arm, it would be an ease if we can describe these two spheres in term of vectors also. To do that, we need to find the \textbf{vector equation of sphere}.\\
+  The idea is simple: A sphere is a locus of points which has a same distance from one fixed point. Thus any point fulfilling that criteria is on the sphere. Figure \ref{fig:sphere_equation} illustrate that idea.
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=0.8\linewidth]{image/sphere_equation.png}
+  	\caption{The principle of vector equation of a sphere}
+  	\label{fig:sphere_equation}
+  \end{figure}
+  
+  As one can see from Figure \ref{fig:sphere_equation}, the vector that has the same length as the radius R is $\vec{l_n} = \vec{x} - \vec{p}$. Using the dot product, we can find the vector equation of the sphere:
+  \begin{center}
+  	\begin{equation} \label{eqt:sphere_vector}
+  	(\vec{x} - \vec{p})\cdot(\vec{x} - \vec{p}) - R^2 = 0
+  	\end{equation}
+  \end{center}
+  Call the origins of frame 1 and 4 respectively O\SB{1} and O\SB{4}, and their position vectors \SP{0}P\SB{1} and \SP{0}P\SB{4}.  We have these equations for spheres:
+  \begin{center}
+  	\begin{equation} \label{eqt:sphere_vector_1}
+  	(\vec{x} - \SP{0}P\SB{1})\cdot(\vec{x} - \SP{0}P\SB{1}) - (R_1)^2 = 0
+  	\end{equation}
+  	\begin{equation} \label{eqt:sphere_vector_4}
+  	(\vec{x} - \SP{0}P\SB{4})\cdot(\vec{x} - \SP{0}P\SB{4}) - (R_2)^2 = 0
+  	\end{equation}
+  \end{center}
+  Subtracting equations (\ref{eqt:sphere_vector_1}) and (\ref{eqt:sphere_vector_4}), we get the \textbf{radical plane} of two spheres:
+  \begin{center}
+  	\begin{equation} \label{eqt:radical_plane}
+  	\SP{0}P\SB{1} \cdot \SP{0}P\SB{1} - \SP{0}P\SB{4} \cdot \SP{0}P\SB{4} + 2 \vec{x} \cdot (\SP{0}P\SB{4} - \SP{0}P\SB{1}) + (R_2)^2 - (R_1)^2 = 0
+  	\end{equation}
+  \end{center}
+  where:
+  \begin{itemize}
+  \item $\SP{0}P\SB{1}$: Position vector of O\SB{1} in reference to frame 0
+  \item $\SP{0}P\SB{4}$: Position vector of the end-effector in reference to frame 0
+  \item $\vec{x}$: Point on the circle
+  \item $R_1 = l_1 + h$
+  \item $R_2 = l_2 + l_3$
+  \end{itemize}
+  The center of the circle will be the intersection between the radical plane and a line which runs through both $\SP{0}P\SB{1}$ and $\SP{0}P\SB{4}$. The principle to write that line's vector equation is shown on Figure \ref{fig:line_equation}.
+  
+  \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=0.6\linewidth]{image/line_equation.png}
+  	\caption{Vector equation of a line}
+  	\label{fig:line_equation}
+  \end{figure}
+  As one can see, the position vector of a point on the line is
+  \begin{equation}
+  	\centering
+  	\vec{P_x} = \SP{0}P_4 + \vec{a}
+  \end{equation}
+  And we have also
+  \begin{equation}
+  	\centering
+  	\vec{a} = m\cdot (\SP{0}P_1- \SP{0}P_4)
+  \end{equation}
+  That leads to the equation of the line:
+  \begin{equation} \label{eqt:line_vector}
+  	\centering
+  	\vec{P_x}(m) = m\cdot\SP{0}P_1 + (1-m) \cdot \SP{0}P_4
+  \end{equation}
+  
+  To find the intersection between the radical plane and the line, we let $\vec{m}=\vec{x}$. Plug equation (\ref{eqt:line_vector}) to (\ref{eqt:radical_plane}), we have the position of the \textbf{center of the circle}:
+  \begin{equation} \label{eqt:center_position}
+  \centering
+  \SP{0}C= a_0\cdot\SP{0}P_1 + (1-a_0) \cdot \SP{0}P_4
+  \end{equation}
+  where:
+  \begin{equation} \label{eqt:center_a0}
+  \centering
+  a_0 = \frac{1 - \frac{(R_1)^2-(R_2)^2}{|\SP{0}P_1-\SP{0}P_4|^2}}{2}
+  \end{equation}
+  The \textbf{radius R of the circle} can be calculated using Pythagore theorem:
+  \begin{equation} \label{eqt:circle_radius_1}
+  \centering
+  R = \sqrt{(R_1)^2 - |C -\SP{0}P_1|^2}
+  \end{equation}
+  or equivalently:
+  \begin{equation} \label{eqt:circle_radius_4}
+  \centering
+  R = \sqrt{(R_2)^2 - |C -\SP{0}P_4|^2}
+  \end{equation}
+  
+  Now that we have already got the center C and radius R of the circle, we can start writing the equation of the circle. Using the general form of a circle parametric equation:
+  \begin{equation} \label{eqt:circur_parametric}
+  \centering
+  E(\theta) = C + R(U\cos{\theta} + V\sin{\theta})
+  \end{equation}
+  where
+  \begin{itemize}
+  	\item E is the position of the elbow
+  	\item $\theta$ is a angle user choose. It is the only variable to choose a point on the circle
+  	\item U is a unit vector which is perpendicular to the radical plane. It's easiest to choose $U = \frac{\SP{0}P_1 - \SP{0}P_4}{|\SP{0}P_1 - \SP{0}P_4|}$
+  	\item V is another unit vector which is perpendicular to U. If U is (x\SB{u},y\SB{u},z\SB{u}), then V can be (z\SB{u},z\SB{u},x\SB{u}-y\SB{u}).
+  \end{itemize}
+  Choose one $\theta_0$, we get E($\theta_0$) in form of $\begin{bmatrix}
+  x_e\\
+  y_e\\
+  z_e
+  \end{bmatrix}$.\\
+  To solve for angles of the servos, we plug E($\theta_0$) into equation (\ref{eqt:position_2}), we get these equations:
+  \[
+  \begin{cases}
+  x_e = l\SB{1}\cos{q\SB{0}}\cos{q\SB{1}}\\
+  y_e = l\SB{1}\sin{q\SB{0}}\cos{q\SB{1}}\\
+  z_e = h + l\SB{1}\sin{q\SB{1}}
+  \end{cases}
+  \]
+  
+  Solve q\SB{1} from z\SB{e}, then continue with q\SB{0}.
+  
+  Repeat with equations in forward kinematics, we get all angles of the servos. The inverse kinematics has been solved.
+
+
+\section{Tendon-driven mechanism}
+\subsection{Idea of a Tendon-driven system}
+Formerly, the actuation of links is done with the direct force exerted by a motor, which is costly and not practical in such small joints as fingers.The Tendon-driven system was invented then to draw the force source away from the joints using a line system, much inspired from the human hand muscles.\\
+Then it is realized that from using lines,we can also put more properties into the motion of the joints, such as flexibility
+\subsection{stepper motor}
+A stepper motor or step motor or stepping motor is a brushless DC electric motor that divides a full rotation into a number of equal steps.$(cites from https://en.wikipedia.org/wiki/Stepper_motor)$ 
+\\
+as stepper motor can divide the circle into small equal angles, we can make advantages from this. the function to calculate the length of a curve from angle and the radius of the curve.
+\begin{equation}
+	\Delta l=r*\Delta\theta 
+\end{equation}
+we then specified a wheel with radius $R$ attached to the stepper motor. The radius of each finger $r$ links are identical
+then we can calculate the lengtth of the line that needs to be pulled to make the joint rotate an $\Delta\theta rad$ or $degree$. 
+
+\begin{equation}
+	\Delta\theta = \Delta\Theta \frac{R}{r}
+\end{equation}
+\begin{equation}
+    \Delta l=\Delta\theta r=\Delta\Theta R
+\end{equation}
+with $\Delta\Theta$ is the rotation angle of the stepper motor when the joint rotates an angle $\Delta\theta$. Then if we declare $[\theta]$ to be the step angle of the step motor, we can calculate the number of steps needed to rotate the joint.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{flex spring system}
+this section is prompted to be a glimpse to enhanced the project for upcoming modules.\\
+Biologically, It is observed that the human hand doesn't stay stiff when not operated but rather quite flexible to force impact. As we use motor to actuate joint the control of the joint motor in oder to achieve such flexibility is hard and hidious. Then a flex spring system is adopted, it is a spring connected with a pulley which actually stretch the line when not operating.\\
+consider we have a system with one joint pulley, the spring pulley and the motor, also act as an pulley.\\
+First, some hyhpothesis of the system should be carried, by calculating the line $l$ stretched w.r.t a force applied.
+\\
+Let joint $i+1$ be the circle $(C)x^2+y^2=1.44$ 
+\\
+
+In such system, it is observed that friction is the main variable that decides how the spring behave.From calculation we see that if there are no friction the spring will not deformed. So we can conclude that the force acting on the spring is cause mainly by friction. 
+\\
+Furthermore, because we calculate our joint angle in term of line pulled, the affected line from the spring should also be concerned. projecting the system on the $Oxy$ Hierarchy show that the descend $\Delta y$ is the same with the deformed length of the spring. We the substitute the $y$s into the circle function and find the length of the curves ' changes, these changes are the line length needed to compensate the friction, which affect the spring
+\begin{thebibliography}{1}
+
+\bibitem{c1} Asada, Haruhiko and Slotine, Jean-Jacques E., Robot analysis and control,Ó 	in Plastics, 10.1016/0005-1098(88)90042-8, Automatica, 1988.
+\bibitem{c2} Craig, Introduction to Robotics: Mechanics and Control 3rd, 10.1109/MEX.1986.4306961, 2004.
+\bibitem{c3} Garcia, Elena and Jimenez, Maria Antonia and De Santos, Pablo Gonzalez and Armada, Manuel, The evolution of robotics research, IEEE Robotics and Automation Magazine, 2007.
+\bibitem{c4} Mathia, Karl, Industrial robotics, Journal of Manufacturing Systems, 1992.
+\bibitem{c5} Hockstein, N. G. and Gourin, C. G. and Faust, R. a. and Terris, D. J., A history of robots: From science fiction to surgical robotics, Journal of Robotic Surgery, 2007.
+\bibitem{c6} Wenger, P. and Chablat, D. and Baili, M., A DH-Parameter Based Condition for 3R Orthogonal Manipulators to Have Four Distinct Inverse Kinematic Solutions, Journal of Mechanical Design, 2005.
+\bibitem{c7} Waldron, Kenneth and Schmiedeler, James, Kinematics, Springer handbook of robotics, 2008.
+\bibitem{c8} Bottema, D. and Roth, B. and Veldkamp, G. R., Theoretical Kinematics, Journal of Applied Mechanics, 1980.
+\bibitem{c9} Altafini, Claudio, Lenarcic, Jadran and Stanisic, Michael M., Advances in Robot Kinematics, Automatica, 2005.
+\bibitem{c10} Quigley, Morgan and Conley, Ken and Gerkey, Brian and FAust, Josh and Foote, Tully and Leibs, Jeremy and Berger, Eric and Wheeler, Rob and Mg, Andrew, ROS: an open-source Robot Operating System, Icra, 2009.
+\bibitem{c11} Foundation, Open Source Robotics, Robot Operating System, 2015.
+\bibitem{c12} Fleder, Michael, ROS : Robot “ Operating ” System, Rss, 2012.
+\bibitem{c13} Jazar, Reza N., Theory of Applied Robotics, 2010.
+
+\end{thebibliography}
+
+\end{document}
+
+
